@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:tns="http://Radian.MDMServices"
+	xmlns:s="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	targetNamespace="http://Radian.MDMServices"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+	<wsdl:types>
+		<s:schema elementFormDefault="qualified"
+			targetNamespace="http://Radian.MDMServices">
+			<s:element name="GetCustomer">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="CustomerID"
+							type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="CustomerNumber" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetCustomerResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="GetCustomerResult" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetOnsitePricing">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="RepresentativeNum" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetOnsitePricingResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="GetOnsitePricingResult" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetServiceCenterPricing">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="CustomerNumber" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" name="CustomerID"
+							type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetServiceCenterPricingResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="GetServiceCenterPricingResult"
+							type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetServiceTypes">
+				<s:complexType/>
+			</s:element>
+			<s:element name="GetServiceTypesResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="GetServiceTypesResult" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetCustomerLocation">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="CustomerNumber" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="LocationNumber" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="CustomerLocationID" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetCustomerLocationResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="GetCustomerLocationResult" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetCostCenter">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="RepresentativeNum" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetCostCenterResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="GetCostCenterResult" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetBillingProfile">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="BillingProfileNumber" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="BillingProfileID" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetBillingProfileResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="GetBillingProfileResult" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetBillingProfiles">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="BillingProfileNumber" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" name="CustomerName"
+							type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="CustomerNumber" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" name="BillToName"
+							type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="BillingProfileStatus" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" name="LagDays"
+							type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetBillingProfilesResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="GetBillingProfilesResult" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetBillingProfileCoveredBranches">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="BillingProfileNumber" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="BillingProfileID" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetBillingProfileCoveredBranchesResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="GetBillingProfileCoveredBranchesResult"
+							type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetBillingProfileOnsites">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="BillingProfileNumber" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="BillingProfileID" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetBillingProfileOnsitesResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="GetBillingProfileOnsitesResult"
+							type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetBillingProfileThirdParties">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="BillingProfileNumber" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="BillingProfileID" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetBillingProfileThirdPartiesResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="GetBillingProfileThirdPartiesResult"
+							type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetBillingProfilesLite">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="BillingProfileNumber" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" name="CustomerName"
+							type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="CustomerNumber" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" name="BillToName"
+							type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="BillingProfileStatus" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" name="LagDays"
+							type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetBillingProfilesLiteResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="GetBillingProfilesLiteResult" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetCodes">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="TableName"
+							type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetCodesResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="GetCodesResult" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetThirdPartySubmitterBilledInvestors">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="BillingProfileNumber" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="BillingProfileID" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" name="CustomerId"
+							type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="CustomerNumber" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetThirdPartySubmitterBilledInvestorsResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="GetThirdPartySubmitterBilledInvestorsResult"
+							type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+		</s:schema>
+	</wsdl:types>
+	<wsdl:message name="GetCustomerSoapIn">
+		<wsdl:part name="part" element="tns:GetCustomer"/>
+	</wsdl:message>
+	<wsdl:message name="GetCustomerSoapOut">
+		<wsdl:part name="GetCustomerResult" element="tns:GetCustomerResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetOnsitePricingSoapIn">
+		<wsdl:part name="part" element="tns:GetOnsitePricing"/>
+	</wsdl:message>
+	<wsdl:message name="GetOnsitePricingSoapOut">
+		<wsdl:part name="GetOnsitePricingResult"
+			element="tns:GetOnsitePricingResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetServiceCenterPricingSoapIn">
+		<wsdl:part name="part" element="tns:GetServiceCenterPricing"/>
+	</wsdl:message>
+	<wsdl:message name="GetServiceCenterPricingSoapOut">
+		<wsdl:part name="GetServiceCenterPricingResult"
+			element="tns:GetServiceCenterPricingResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetServiceTypesSoapIn">
+		<wsdl:part name="part" element="tns:GetServiceTypes"/>
+	</wsdl:message>
+	<wsdl:message name="GetServiceTypesSoapOut">
+		<wsdl:part name="GetServiceTypesResult"
+			element="tns:GetServiceTypesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetCustomerLocationSoapIn">
+		<wsdl:part name="part" element="tns:GetCustomerLocation"/>
+	</wsdl:message>
+	<wsdl:message name="GetCustomerLocationSoapOut">
+		<wsdl:part name="GetCustomerLocationResult"
+			element="tns:GetCustomerLocationResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetCostCenterSoapIn">
+		<wsdl:part name="part" element="tns:GetCostCenter"/>
+	</wsdl:message>
+	<wsdl:message name="GetCostCenterSoapOut">
+		<wsdl:part name="GetCostCenterResult"
+			element="tns:GetCostCenterResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetBillingProfileSoapIn">
+		<wsdl:part name="part" element="tns:GetBillingProfile"/>
+	</wsdl:message>
+	<wsdl:message name="GetBillingProfileSoapOut">
+		<wsdl:part name="GetBillingProfileResult"
+			element="tns:GetBillingProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetBillingProfilesSoapIn">
+		<wsdl:part name="part" element="tns:GetBillingProfiles"/>
+	</wsdl:message>
+	<wsdl:message name="GetBillingProfilesSoapOut">
+		<wsdl:part name="GetBillingProfilesResult"
+			element="tns:GetBillingProfilesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetBillingProfileCoveredBranchesSoapIn">
+		<wsdl:part name="part" element="tns:GetBillingProfileCoveredBranches"/>
+	</wsdl:message>
+	<wsdl:message name="GetBillingProfileCoveredBranchesSoapOut">
+		<wsdl:part name="GetBillingProfileCoveredBranchesResult"
+			element="tns:GetBillingProfileCoveredBranchesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetBillingProfileOnsitesSoapIn">
+		<wsdl:part name="part" element="tns:GetBillingProfileOnsites"/>
+	</wsdl:message>
+	<wsdl:message name="GetBillingProfileOnsitesSoapOut">
+		<wsdl:part name="GetBillingProfileOnsitesResult"
+			element="tns:GetBillingProfileOnsitesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetBillingProfileThirdPartiesSoapIn">
+		<wsdl:part name="part" element="tns:GetBillingProfileThirdParties"/>
+	</wsdl:message>
+	<wsdl:message name="GetBillingProfileThirdPartiesSoapOut">
+		<wsdl:part name="GetBillingProfileThirdPartiesResult"
+			element="tns:GetBillingProfileThirdPartiesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetBillingProfilesLiteSoapIn">
+		<wsdl:part name="part" element="tns:GetBillingProfilesLite"/>
+	</wsdl:message>
+	<wsdl:message name="GetBillingProfilesLiteSoapOut">
+		<wsdl:part name="GetBillingProfilesLiteResult"
+			element="tns:GetBillingProfilesLiteResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetCodesSoapIn">
+		<wsdl:part name="part" element="tns:GetCodes"/>
+	</wsdl:message>
+	<wsdl:message name="GetCodesSoapOut">
+		<wsdl:part name="GetCodesResult" element="tns:GetCodesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetThirdPartySubmitterBilledInvestorsSoapIn">
+		<wsdl:part name="part"
+			element="tns:GetThirdPartySubmitterBilledInvestors"/>
+	</wsdl:message>
+	<wsdl:message name="GetThirdPartySubmitterBilledInvestorsSoapOut">
+		<wsdl:part name="GetThirdPartySubmitterBilledInvestorsResult"
+			element="tns:GetThirdPartySubmitterBilledInvestorsResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="CMDServiceSoap">
+		<wsdl:operation name="GetCustomer">
+			<wsdl:input message="tns:GetCustomerSoapIn"/>
+			<wsdl:output message="tns:GetCustomerSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetOnsitePricing">
+			<wsdl:input message="tns:GetOnsitePricingSoapIn"/>
+			<wsdl:output message="tns:GetOnsitePricingSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetServiceCenterPricing">
+			<wsdl:input message="tns:GetServiceCenterPricingSoapIn"/>
+			<wsdl:output message="tns:GetServiceCenterPricingSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetServiceTypes">
+			<wsdl:input message="tns:GetServiceTypesSoapIn"/>
+			<wsdl:output message="tns:GetServiceTypesSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetCustomerLocation">
+			<wsdl:input message="tns:GetCustomerLocationSoapIn"/>
+			<wsdl:output message="tns:GetCustomerLocationSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetCostCenter">
+			<wsdl:input message="tns:GetCostCenterSoapIn"/>
+			<wsdl:output message="tns:GetCostCenterSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfile">
+			<wsdl:input message="tns:GetBillingProfileSoapIn"/>
+			<wsdl:output message="tns:GetBillingProfileSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfiles">
+			<wsdl:input message="tns:GetBillingProfilesSoapIn"/>
+			<wsdl:output message="tns:GetBillingProfilesSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfileCoveredBranches">
+			<wsdl:input message="tns:GetBillingProfileCoveredBranchesSoapIn"/>
+			<wsdl:output message="tns:GetBillingProfileCoveredBranchesSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfileOnsites">
+			<wsdl:input message="tns:GetBillingProfileOnsitesSoapIn"/>
+			<wsdl:output message="tns:GetBillingProfileOnsitesSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfileThirdParties">
+			<wsdl:input message="tns:GetBillingProfileThirdPartiesSoapIn"/>
+			<wsdl:output message="tns:GetBillingProfileThirdPartiesSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfilesLite">
+			<wsdl:input message="tns:GetBillingProfilesLiteSoapIn"/>
+			<wsdl:output message="tns:GetBillingProfilesLiteSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetCodes">
+			<wsdl:input message="tns:GetCodesSoapIn"/>
+			<wsdl:output message="tns:GetCodesSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetThirdPartySubmitterBilledInvestors">
+			<wsdl:input
+				message="tns:GetThirdPartySubmitterBilledInvestorsSoapIn"/>
+			<wsdl:output
+				message="tns:GetThirdPartySubmitterBilledInvestorsSoapOut"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CMDServiceSoap" type="tns:CMDServiceSoap">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="GetCustomer">
+			<soap:operation soapAction="http://Radian.MDMServices/GetCustomer"
+				style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetOnsitePricing">
+			<soap:operation
+				soapAction="http://Radian.MDMServices/GetOnsitePricing"
+				style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetServiceCenterPricing">
+			<soap:operation
+				soapAction="http://Radian.MDMServices/GetServiceCenterPricing"
+				style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetServiceTypes">
+			<soap:operation
+				soapAction="http://Radian.MDMServices/GetServiceTypes"
+				style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetCustomerLocation">
+			<soap:operation
+				soapAction="http://Radian.MDMServices/GetCustomerLocation"
+				style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetCostCenter">
+			<soap:operation soapAction="http://Radian.MDMServices/GetCostCenter"
+				style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfile">
+			<soap:operation
+				soapAction="http://Radian.MDMServices/GetBillingProfile"
+				style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfiles">
+			<soap:operation
+				soapAction="http://Radian.MDMServices/GetBillingProfiles"
+				style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfileCoveredBranches">
+			<soap:operation
+				soapAction="http://Radian.MDMServices/GetBillingProfileCoveredBranches"
+				style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfileOnsites">
+			<soap:operation
+				soapAction="http://Radian.MDMServices/GetBillingProfileOnsites"
+				style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfileThirdParties">
+			<soap:operation
+				soapAction="http://Radian.MDMServices/GetBillingProfileThirdParties"
+				style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfilesLite">
+			<soap:operation
+				soapAction="http://Radian.MDMServices/GetBillingProfilesLite"
+				style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetCodes">
+			<soap:operation soapAction="http://Radian.MDMServices/GetCodes"
+				style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetThirdPartySubmitterBilledInvestors">
+			<soap:operation
+				soapAction="http://Radian.MDMServices/GetThirdPartySubmitterBilledInvestors"
+				style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="CMDServiceSoap12" type="tns:CMDServiceSoap">
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="GetCustomer">
+			<soap12:operation soapAction="http://Radian.MDMServices/GetCustomer"
+				style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetOnsitePricing">
+			<soap12:operation
+				soapAction="http://Radian.MDMServices/GetOnsitePricing"
+				style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetServiceCenterPricing">
+			<soap12:operation
+				soapAction="http://Radian.MDMServices/GetServiceCenterPricing"
+				style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetServiceTypes">
+			<soap12:operation
+				soapAction="http://Radian.MDMServices/GetServiceTypes"
+				style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetCustomerLocation">
+			<soap12:operation
+				soapAction="http://Radian.MDMServices/GetCustomerLocation"
+				style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetCostCenter">
+			<soap12:operation
+				soapAction="http://Radian.MDMServices/GetCostCenter"
+				style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfile">
+			<soap12:operation
+				soapAction="http://Radian.MDMServices/GetBillingProfile"
+				style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfiles">
+			<soap12:operation
+				soapAction="http://Radian.MDMServices/GetBillingProfiles"
+				style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfileCoveredBranches">
+			<soap12:operation
+				soapAction="http://Radian.MDMServices/GetBillingProfileCoveredBranches"
+				style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfileOnsites">
+			<soap12:operation
+				soapAction="http://Radian.MDMServices/GetBillingProfileOnsites"
+				style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfileThirdParties">
+			<soap12:operation
+				soapAction="http://Radian.MDMServices/GetBillingProfileThirdParties"
+				style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBillingProfilesLite">
+			<soap12:operation
+				soapAction="http://Radian.MDMServices/GetBillingProfilesLite"
+				style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetCodes">
+			<soap12:operation soapAction="http://Radian.MDMServices/GetCodes"
+				style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetThirdPartySubmitterBilledInvestors">
+			<soap12:operation
+				soapAction="http://Radian.MDMServices/GetThirdPartySubmitterBilledInvestors"
+				style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CMDService">
+		
+		<wsdl:port name="CMDServiceSoap" binding="tns:CMDServiceSoap">
+			<soap:address location="@webservice.url.cmd@"/>
+		</wsdl:port>
+		
+		<wsdl:port name="CMDServiceSoap12" binding="tns:CMDServiceSoap12">
+			<soap12:address location="@webservice.url.cmd@"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
