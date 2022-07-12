@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://radianmi.MionlineCUW/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://radianmi.MionlineCUW/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Mionline Mionline CUW Web Service</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://radianmi.MionlineCUW/">
+      <s:element name="WMCUWGetRepInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRepID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMCUWGetRepInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMCUWGetRepInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMCUWGetAllUnbilledLoans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRepID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMCUWGetAllUnbilledLoansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMCUWGetAllUnbilledLoansResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMCUWGetAllUnbilledLoansForDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRepID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMCUWGetAllUnbilledLoansForDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMCUWGetAllUnbilledLoansForDatesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMCUWGetNumberOfUnbilledLoans">
+        <s:complexType />
+      </s:element>
+      <s:element name="WMCUWGetNumberOfUnbilledLoansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMCUWGetNumberOfUnbilledLoansResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMCUWListUnderwritersWithUnbilledLoans">
+        <s:complexType />
+      </s:element>
+      <s:element name="WMCUWListUnderwritersWithUnbilledLoansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMCUWListUnderwritersWithUnbilledLoansResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMCUWListUnderwritersWithUnbilledLoansForDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMCUWListUnderwritersWithUnbilledLoansForDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMCUWListUnderwritersWithUnbilledLoansForDatesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMCUWUpdateLoanBillingStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRepID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loanIdsList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMCUWUpdateLoanBillingStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMCUWUpdateLoanBillingStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WMCUWGetRepInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:WMCUWGetRepInfo" />
+  </wsdl:message>
+  <wsdl:message name="WMCUWGetRepInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:WMCUWGetRepInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMCUWGetAllUnbilledLoansSoapIn">
+    <wsdl:part name="parameters" element="tns:WMCUWGetAllUnbilledLoans" />
+  </wsdl:message>
+  <wsdl:message name="WMCUWGetAllUnbilledLoansSoapOut">
+    <wsdl:part name="parameters" element="tns:WMCUWGetAllUnbilledLoansResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMCUWGetAllUnbilledLoansForDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:WMCUWGetAllUnbilledLoansForDates" />
+  </wsdl:message>
+  <wsdl:message name="WMCUWGetAllUnbilledLoansForDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:WMCUWGetAllUnbilledLoansForDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMCUWGetNumberOfUnbilledLoansSoapIn">
+    <wsdl:part name="parameters" element="tns:WMCUWGetNumberOfUnbilledLoans" />
+  </wsdl:message>
+  <wsdl:message name="WMCUWGetNumberOfUnbilledLoansSoapOut">
+    <wsdl:part name="parameters" element="tns:WMCUWGetNumberOfUnbilledLoansResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMCUWListUnderwritersWithUnbilledLoansSoapIn">
+    <wsdl:part name="parameters" element="tns:WMCUWListUnderwritersWithUnbilledLoans" />
+  </wsdl:message>
+  <wsdl:message name="WMCUWListUnderwritersWithUnbilledLoansSoapOut">
+    <wsdl:part name="parameters" element="tns:WMCUWListUnderwritersWithUnbilledLoansResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMCUWListUnderwritersWithUnbilledLoansForDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:WMCUWListUnderwritersWithUnbilledLoansForDates" />
+  </wsdl:message>
+  <wsdl:message name="WMCUWListUnderwritersWithUnbilledLoansForDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:WMCUWListUnderwritersWithUnbilledLoansForDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMCUWUpdateLoanBillingStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:WMCUWUpdateLoanBillingStatus" />
+  </wsdl:message>
+  <wsdl:message name="WMCUWUpdateLoanBillingStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:WMCUWUpdateLoanBillingStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CUWServiceSoap">
+    <wsdl:operation name="WMCUWGetRepInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns the CUW Rep Information for the specified CUW Rep ID.</wsdl:documentation>
+      <wsdl:input message="tns:WMCUWGetRepInfoSoapIn" />
+      <wsdl:output message="tns:WMCUWGetRepInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWGetAllUnbilledLoans">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns all the unbilled loans for the CUW specified by the Rep ID.</wsdl:documentation>
+      <wsdl:input message="tns:WMCUWGetAllUnbilledLoansSoapIn" />
+      <wsdl:output message="tns:WMCUWGetAllUnbilledLoansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWGetAllUnbilledLoansForDates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns all the unbilled loans for the CUW  specified by the Rep ID and date range.</wsdl:documentation>
+      <wsdl:input message="tns:WMCUWGetAllUnbilledLoansForDatesSoapIn" />
+      <wsdl:output message="tns:WMCUWGetAllUnbilledLoansForDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWGetNumberOfUnbilledLoans">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns the current number of unbilled loans.</wsdl:documentation>
+      <wsdl:input message="tns:WMCUWGetNumberOfUnbilledLoansSoapIn" />
+      <wsdl:output message="tns:WMCUWGetNumberOfUnbilledLoansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWListUnderwritersWithUnbilledLoans">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns a list of Rep IDs for underwriters with unbilled loans.</wsdl:documentation>
+      <wsdl:input message="tns:WMCUWListUnderwritersWithUnbilledLoansSoapIn" />
+      <wsdl:output message="tns:WMCUWListUnderwritersWithUnbilledLoansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWListUnderwritersWithUnbilledLoansForDates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns a list of RepIDs for underwriters with unbilled loans for the specified date range.</wsdl:documentation>
+      <wsdl:input message="tns:WMCUWListUnderwritersWithUnbilledLoansForDatesSoapIn" />
+      <wsdl:output message="tns:WMCUWListUnderwritersWithUnbilledLoansForDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWUpdateLoanBillingStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">[STUB] This method updates the loan billing status for one or more loans.</wsdl:documentation>
+      <wsdl:input message="tns:WMCUWUpdateLoanBillingStatusSoapIn" />
+      <wsdl:output message="tns:WMCUWUpdateLoanBillingStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CUWServiceSoap" type="tns:CUWServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WMCUWGetRepInfo">
+      <soap:operation soapAction="http://radianmi.MionlineCUW/WMCUWGetRepInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWGetAllUnbilledLoans">
+      <soap:operation soapAction="http://radianmi.MionlineCUW/WMCUWGetAllUnbilledLoans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWGetAllUnbilledLoansForDates">
+      <soap:operation soapAction="http://radianmi.MionlineCUW/WMCUWGetAllUnbilledLoansForDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWGetNumberOfUnbilledLoans">
+      <soap:operation soapAction="http://radianmi.MionlineCUW/WMCUWGetNumberOfUnbilledLoans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWListUnderwritersWithUnbilledLoans">
+      <soap:operation soapAction="http://radianmi.MionlineCUW/WMCUWListUnderwritersWithUnbilledLoans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWListUnderwritersWithUnbilledLoansForDates">
+      <soap:operation soapAction="http://radianmi.MionlineCUW/WMCUWListUnderwritersWithUnbilledLoansForDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWUpdateLoanBillingStatus">
+      <soap:operation soapAction="http://radianmi.MionlineCUW/WMCUWUpdateLoanBillingStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CUWServiceSoap12" type="tns:CUWServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WMCUWGetRepInfo">
+      <soap12:operation soapAction="http://radianmi.MionlineCUW/WMCUWGetRepInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWGetAllUnbilledLoans">
+      <soap12:operation soapAction="http://radianmi.MionlineCUW/WMCUWGetAllUnbilledLoans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWGetAllUnbilledLoansForDates">
+      <soap12:operation soapAction="http://radianmi.MionlineCUW/WMCUWGetAllUnbilledLoansForDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWGetNumberOfUnbilledLoans">
+      <soap12:operation soapAction="http://radianmi.MionlineCUW/WMCUWGetNumberOfUnbilledLoans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWListUnderwritersWithUnbilledLoans">
+      <soap12:operation soapAction="http://radianmi.MionlineCUW/WMCUWListUnderwritersWithUnbilledLoans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWListUnderwritersWithUnbilledLoansForDates">
+      <soap12:operation soapAction="http://radianmi.MionlineCUW/WMCUWListUnderwritersWithUnbilledLoansForDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCUWUpdateLoanBillingStatus">
+      <soap12:operation soapAction="http://radianmi.MionlineCUW/WMCUWUpdateLoanBillingStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CUWService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Mionline Mionline CUW Web Service</wsdl:documentation>
+    <wsdl:port name="CUWServiceSoap" binding="tns:CUWServiceSoap">
+      <soap:address location="@webservice.url.mionline@" />
+    </wsdl:port>
+    <wsdl:port name="CUWServiceSoap12" binding="tns:CUWServiceSoap12">
+      <soap12:address location="@webservice.url.mionline@" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
