@@ -308,7 +308,7 @@
 			<!--- security Volnarabilites Plugin End-->
 
 
-            <!-- Plugin to Generate Stub for WSDL Start 
+            <!-- Plugin to Generate Stub for WSDL Start -->
             <plugin>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
                 <artifactId>maven-jaxb2-plugin</artifactId>
@@ -325,15 +325,15 @@
                         <arg>-XautoNameResolution</arg>
                     </args>
 
-                    <schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
-                    <generatePackage>com.radian.cuwb.ws.cmd.model</generatePackage>
+                    <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
+                    <generatePackage>com.radian.webserviceclient.model</generatePackage>
                     <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
                     <schemaIncludes>
-                        <include>cmd-cuwbilling-websvc.wsdl</include>
+                        <include>mionline-cuwbilling-websvc.wsdl</include>
                     </schemaIncludes>
                 </configuration>
             </plugin>
-             Plugin to Generate Stub for WSDL End -->
+           <!--  Plugin to Generate Stub for WSDL End -->
 			
         </plugins>
     </build>

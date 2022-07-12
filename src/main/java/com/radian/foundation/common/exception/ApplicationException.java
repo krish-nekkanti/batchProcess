@@ -5,9 +5,7 @@ import java.util.Locale;
 
 import com.radian.foundation.common.resources.messages.MessageUtil;
 
-public class ApplicationException
-    extends CascadingException
-    implements ApplicationThrowable, CascadingThrowable, Serializable
+public class ApplicationException  extends Exception
 {
     /**
      * The message key for this message.
