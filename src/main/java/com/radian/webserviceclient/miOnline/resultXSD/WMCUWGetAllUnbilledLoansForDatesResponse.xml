@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMCUWGetAllUnbilledLoansForDatesResponse_DTL version="1.0" method="">
+   <call_returnstatus>
+      <errorcode />
+      <errordesc />
+      <errorsrc />
+   </call_returnstatus>
+   <repid>A74</repid>
+   <loans>
+      <loan_info>
+         <orderid>196892</orderid>
+         <loanid>15000076</loanid>
+         <lenderloanid>INQUIRY TEST</lenderloanid>
+         <decisiondate>9/4/2012 2:10:02 PM</decisiondate>
+         <miordered>Y</miordered>
+         <miappnumber>51883841</miappnumber>
+         <lienposition>FirstLien</lienposition>
+         <liencode>1ST</liencode>
+         <piggybackflag>N</piggybackflag>
+         <servicetype>Manual</servicetype>
+         <servicetypecode>MANUN</servicetypecode>
+         <auscodetext />
+         <auscode />
+         <ausrecommendation />
+         <ausrecommendationcode />
+         <ducaseid />
+         <loanpurposedesc>Purchase</loanpurposedesc>
+         <loanpurposecode>PUR</loanpurposecode>
+         <loanamount>120000</loanamount>
+         <loanltv>85</loanltv>
+         <loanpropstreet>INQUIRY TEST</loanpropstreet>
+         <loanpropcity>PHILA</loanpropcity>
+         <loanpropstate>PA</loanpropstate>
+         <loanpropzip>13123</loanpropzip>
+         <loanprogram>INQUIRY TEST</loanprogram>
+         <loanstatusdesc>Suspended</loanstatusdesc>
+         <loanstatuscode>SUSP</loanstatuscode>
+         <businesschannel>Wholesale</businesschannel>
+         <businesschannelcode>WHOLE</businesschannelcode>
+         <brokerloanappnum>INQUIRY TEST</brokerloanappnum>
+         <lpkeynumber />
+         <fulfillmentdate>9/4/2012 12:00:00 AM</fulfillmentdate>
+         <decisionby>A74</decisionby>
+         <borrowers>
+            <borrower>
+               <ssn>111111111</ssn>
+               <fname>BRIAN</fname>
+               <mname />
+               <lname>INQUIRYTEST</lname>
+               <ficoscore>777</ficoscore>
+            </borrower>
+         </borrowers>
+         <clientLenderinfo>10758000|Bank of America, N.A.|100 N Tryon St||||Charlotte|NC|282550000</clientLenderinfo>
+         <submittedByLenderInfo>10758000|Bank of America, N.A.|100 N Tryon St||||Charlotte|NC|282550000</submittedByLenderInfo>
+         <originatorLenderInfo>10758000|Bank of America, N.A.|100 N Tryon St||||Charlotte|NC|282550000</originatorLenderInfo>
+      </loan_info>
+   </loans>
+</WMCUWGetAllUnbilledLoansForDatesResponse_DTL>

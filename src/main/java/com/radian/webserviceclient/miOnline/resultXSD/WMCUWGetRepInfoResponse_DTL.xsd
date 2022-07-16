@@ -1,0 +1,31 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="WMCUWGetRepInfoResponse_DTL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="call_returnstatus">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="errorcode"/>
+              <xs:element type="xs:string" name="errordesc"/>
+              <xs:element type="xs:string" name="errorsrc"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:string" name="repid"/>
+        <xs:element name="cuw_info">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="repid"/>
+              <xs:element type="xs:string" name="firstname"/>
+              <xs:element type="xs:string" name="lastname"/>
+              <xs:element type="xs:string" name="jobfunction"/>
+              <xs:element type="xs:int" name="location"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:float" name="version"/>
+      <xs:attribute type="xs:string" name="method"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

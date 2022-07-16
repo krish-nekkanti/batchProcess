@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMCUWGetAllUnbilledLoansResponse_DTL version="1.0" method="">
+   <call_returnstatus>
+      <errorcode />
+      <errordesc />
+      <errorsrc />
+   </call_returnstatus>
+   <repid>A74</repid>
+   <loans>
+      <loan_info>
+         <orderid>196892</orderid>
+         <loanid>15000076</loanid>
+         <lenderloanid>INQUIRY TEST</lenderloanid>
+         <decisiondate>9/4/2012 2:10:02 PM</decisiondate>
+         <miordered>Y</miordered>
+         <miappnumber>51883841</miappnumber>
+         <lienposition>FirstLien</lienposition>
+         <liencode>1ST</liencode>
+         <piggybackflag>N</piggybackflag>
+         <servicetype>Manual</servicetype>
+         <servicetypecode>MANUN</servicetypecode>
+         <auscodetext />
+         <auscode />
+         <ausrecommendation />
+         <ausrecommendationcode />
+         <ducaseid />
+         <loanpurposedesc>Purchase</loanpurposedesc>
+         <loanpurposecode>PUR</loanpurposecode>
+         <loanamount>120000</loanamount>
+         <loanltv>85</loanltv>
+         <loanpropstreet>INQUIRY TEST</loanpropstreet>
+         <loanpropcity>PHILA</loanpropcity>
+         <loanpropstate>PA</loanpropstate>
+         <loanpropzip>13123</loanpropzip>
+         <loanprogram>INQUIRY TEST</loanprogram>
+         <loanstatusdesc>Suspended</loanstatusdesc>
+         <loanstatuscode>SUSP</loanstatuscode>
+         <businesschannel>Wholesale</businesschannel>
+         <businesschannelcode>WHOLE</businesschannelcode>
+         <brokerloanappnum>INQUIRY TEST</brokerloanappnum>
+         <lpkeynumber />
+         <fulfillmentdate>9/4/2012 12:00:00 AM</fulfillmentdate>
+         <decisionby>A74</decisionby>
+         <borrowers>
+            <borrower>
+               <ssn>111111111</ssn>
+               <fname>BRIAN</fname>
+               <mname />
+               <lname>INQUIRYTEST</lname>
+               <ficoscore>777</ficoscore>
+            </borrower>
+         </borrowers>
+         <clientLenderinfo>10758000|Bank of America, N.A.|100 N Tryon St||||Charlotte|NC|282550000</clientLenderinfo>
+         <submittedByLenderInfo>10758000|Bank of America, N.A.|100 N Tryon St||||Charlotte|NC|282550000</submittedByLenderInfo>
+         <originatorLenderInfo>10758000|Bank of America, N.A.|100 N Tryon St||||Charlotte|NC|282550000</originatorLenderInfo>
+      </loan_info>
+      <loan_info>
+         <orderid>197045</orderid>
+         <loanid>15000229</loanid>
+         <lenderloanid>TC008.FNM</lenderloanid>
+         <decisiondate>1/8/2013 8:07:39 AM</decisiondate>
+         <miordered>Y</miordered>
+         <miappnumber>51896752</miappnumber>
+         <lienposition>FirstLien</lienposition>
+         <liencode>1ST</liencode>
+         <piggybackflag>N</piggybackflag>
+         <servicetype>Underwriting Edge</servicetype>
+         <servicetypecode>UWEDG</servicetypecode>
+         <auscodetext />
+         <auscode />
+         <ausrecommendation />
+         <ausrecommendationcode />
+         <ducaseid>0</ducaseid>
+         <loanpurposedesc>Purchase</loanpurposedesc>
+         <loanpurposecode>PUR</loanpurposecode>
+         <loanamount>124000</loanamount>
+         <loanltv>92.54</loanltv>
+         <loanpropstreet>8 XSH STREET</loanpropstreet>
+         <loanpropcity>FAIRFAX</loanpropcity>
+         <loanpropstate>VA</loanpropstate>
+         <loanpropzip>22033</loanpropzip>
+         <loanprogram />
+         <loanstatusdesc>Approved</loanstatusdesc>
+         <loanstatuscode>APPRV</loanstatuscode>
+         <businesschannel />
+         <businesschannelcode>OTH</businesschannelcode>
+         <brokerloanappnum>51896752</brokerloanappnum>
+         <lpkeynumber>0</lpkeynumber>
+         <fulfillmentdate>1/8/2013 12:00:00 AM</fulfillmentdate>
+         <decisionby>A74</decisionby>
+         <borrowers>
+            <borrower>
+               <ssn>300405000</ssn>
+               <fname>JOHN</fname>
+               <mname>V</mname>
+               <lname>HOMEOWNER</lname>
+               <ficoscore>760</ficoscore>
+            </borrower>
+         </borrowers>
+         <clientLenderinfo>A2651000|First Commerce Credit Union|2073 Summit Lake Dr #100||||Tallahassee|FL|323170000</clientLenderinfo>
+         <submittedByLenderInfo>A2651000|First Commerce Credit Union|2073 Summit Lake Dr #100||||Tallahassee|FL|323170000</submittedByLenderInfo>
+         <originatorLenderInfo>A2651000|First Commerce Credit Union|2073 Summit Lake Dr #100||||Tallahassee|FL|323170000</originatorLenderInfo>
+      </loan_info>
+   </loans>
+</WMCUWGetAllUnbilledLoansResponse_DTL>

@@ -1,0 +1,85 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="WMCUWGetAllUnbilledLoansForDatesResponse_DTL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="call_returnstatus">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="errorcode"/>
+              <xs:element type="xs:string" name="errordesc"/>
+              <xs:element type="xs:string" name="errorsrc"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:string" name="repid"/>
+        <xs:element name="loans">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="loan_info">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:int" name="orderid"/>
+                    <xs:element type="xs:int" name="loanid"/>
+                    <xs:element type="xs:string" name="lenderloanid"/>
+                    <xs:element type="xs:string" name="decisiondate"/>
+                    <xs:element type="xs:string" name="miordered"/>
+                    <xs:element type="xs:int" name="miappnumber"/>
+                    <xs:element type="xs:string" name="lienposition"/>
+                    <xs:element type="xs:string" name="liencode"/>
+                    <xs:element type="xs:string" name="piggybackflag"/>
+                    <xs:element type="xs:string" name="servicetype"/>
+                    <xs:element type="xs:string" name="servicetypecode"/>
+                    <xs:element type="xs:string" name="auscodetext"/>
+                    <xs:element type="xs:string" name="auscode"/>
+                    <xs:element type="xs:string" name="ausrecommendation"/>
+                    <xs:element type="xs:string" name="ausrecommendationcode"/>
+                    <xs:element type="xs:string" name="ducaseid"/>
+                    <xs:element type="xs:string" name="loanpurposedesc"/>
+                    <xs:element type="xs:string" name="loanpurposecode"/>
+                    <xs:element type="xs:int" name="loanamount"/>
+                    <xs:element type="xs:byte" name="loanltv"/>
+                    <xs:element type="xs:string" name="loanpropstreet"/>
+                    <xs:element type="xs:string" name="loanpropcity"/>
+                    <xs:element type="xs:string" name="loanpropstate"/>
+                    <xs:element type="xs:short" name="loanpropzip"/>
+                    <xs:element type="xs:string" name="loanprogram"/>
+                    <xs:element type="xs:string" name="loanstatusdesc"/>
+                    <xs:element type="xs:string" name="loanstatuscode"/>
+                    <xs:element type="xs:string" name="businesschannel"/>
+                    <xs:element type="xs:string" name="businesschannelcode"/>
+                    <xs:element type="xs:string" name="brokerloanappnum"/>
+                    <xs:element type="xs:string" name="lpkeynumber"/>
+                    <xs:element type="xs:string" name="fulfillmentdate"/>
+                    <xs:element type="xs:string" name="decisionby"/>
+                    <xs:element name="borrowers">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="borrower">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:int" name="ssn"/>
+                                <xs:element type="xs:string" name="fname"/>
+                                <xs:element type="xs:string" name="mname"/>
+                                <xs:element type="xs:string" name="lname"/>
+                                <xs:element type="xs:short" name="ficoscore"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="clientLenderinfo"/>
+                    <xs:element type="xs:string" name="submittedByLenderInfo"/>
+                    <xs:element type="xs:string" name="originatorLenderInfo"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:float" name="version"/>
+      <xs:attribute type="xs:string" name="method"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

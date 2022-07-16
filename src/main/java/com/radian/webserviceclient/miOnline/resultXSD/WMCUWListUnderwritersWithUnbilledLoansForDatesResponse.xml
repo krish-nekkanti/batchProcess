@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMCUWListUnderwritersWithUnbilledLoansForDatesResponse_DTL version="1.0" method="">
+   <call_returnstatus>
+      <errorcode />
+      <errordesc />
+      <errorsrc />
+   </call_returnstatus>
+   <underwriters>
+      <listitem>003</listitem>
+      <listitem>A11</listitem>
+      <listitem>A22</listitem>
+      <listitem>A74</listitem>
+      <listitem>A76</listitem>
+      <listitem>A80</listitem>
+      <listitem>A88</listitem>
+      <listitem>AA1</listitem>
+      <listitem>AA2</listitem>
+      <listitem>AA3</listitem>
+      <listitem>AA4</listitem>
+      <listitem>AA5</listitem>
+      <listitem>AA6</listitem>
+      <listitem>AA7</listitem>
+      <listitem>AA8</listitem>
+      <listitem>AA9</listitem>
+      <listitem>AAA</listitem>
+      <listitem>AAN</listitem>
+      <listitem>AAZ</listitem>
+      <listitem>ACW</listitem>
+      <listitem>AHH</listitem>
+      <listitem>BL7</listitem>
+      <listitem>DNU</listitem>
+      <listitem>ER2</listitem>
+      <listitem>EY1</listitem>
+      <listitem>EZ3</listitem>
+      <listitem>F96</listitem>
+      <listitem>F98</listitem>
+      <listitem>FAC</listitem>
+      <listitem>FAN</listitem>
+      <listitem>FBL</listitem>
+      <listitem>FBQ</listitem>
+      <listitem>FBR</listitem>
+      <listitem>FBU</listitem>
+      <listitem>FCM</listitem>
+      <listitem>FCQ</listitem>
+      <listitem>FCR</listitem>
+      <listitem>FCX</listitem>
+      <listitem>FDG</listitem>
+      <listitem>FDH</listitem>
+      <listitem>FDJ</listitem>
+      <listitem>FE0</listitem>
+      <listitem>FEF</listitem>
+      <listitem>FEH</listitem>
+      <listitem>FEJ</listitem>
+      <listitem>G01</listitem>
+      <listitem>G95</listitem>
+      <listitem>K67</listitem>
+      <listitem>R54</listitem>
+      <listitem>S67</listitem>
+      <listitem>ZA5</listitem>
+   </underwriters>
+</WMCUWListUnderwritersWithUnbilledLoansForDatesResponse_DTL>

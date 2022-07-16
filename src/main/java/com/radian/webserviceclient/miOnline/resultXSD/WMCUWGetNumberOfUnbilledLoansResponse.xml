@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMCUWGetNumberOfUnbilledLoansResponse_DTL version="1.0" method="">
+   <call_returnstatus>
+      <errorcode />
+      <errordesc />
+      <errorsrc />
+   </call_returnstatus>
+   <nrloans>19957</nrloans>
+</WMCUWGetNumberOfUnbilledLoansResponse_DTL>

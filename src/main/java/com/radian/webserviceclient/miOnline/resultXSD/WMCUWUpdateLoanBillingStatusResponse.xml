@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMCUWUpdateLoanBillingStatusResponse_DTL version="1.0" method="">
+   <call_returnstatus>
+      <errorcode />
+      <errordesc />
+      <errorsrc />
+   </call_returnstatus>
+   <nrloans>1</nrloans>
+   <nrupdatedtobilled>1</nrupdatedtobilled>
+   <nrmarkedbilled>0</nrmarkedbilled>
+   <nrnotfound>0</nrnotfound>
+   <loans />
+</WMCUWUpdateLoanBillingStatusResponse_DTL>
