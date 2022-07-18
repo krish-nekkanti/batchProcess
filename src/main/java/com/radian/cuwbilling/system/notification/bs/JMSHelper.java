@@ -32,7 +32,7 @@ public class JMSHelper
         return (instance);
     }
 
-    public void send(String queueName, java.io.Serializable obj) throws NamingException, JMSException
+    public void send(String queueName, java.io.Serializable obj) throws Exception
     {
         QueueConnection queueConnection = null;
         Queue queue = null;

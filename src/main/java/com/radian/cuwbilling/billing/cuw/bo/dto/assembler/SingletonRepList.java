@@ -3,12 +3,10 @@ package com.radian.cuwbilling.billing.cuw.bo.dto.assembler;
 import java.util.HashMap;
 
 import com.radian.cuwbilling.billing.cuw.bo.dto.pricing.response.RepInfoDTO;
-import com.radian.foundation.common.logging.LogManager;
 import com.radian.foundation.common.logging.Logger;
 import com.radian.webserviceclient.WSClientException;
 import com.radian.webserviceclient.WSClientExceptionStatus;
-import com.radian.webserviceclient.WSClientFactory;
-import com.radian.webserviceclient.WSClientMionline;
+import com.radian.webserviceclient.WSClientMionlineNew;
 
 /**
  * @author jwu
@@ -18,12 +16,14 @@ import com.radian.webserviceclient.WSClientMionline;
  */
 public class SingletonRepList 
 {
+	
+	//Logs and MIOnlineClient class has to integrate -KP
    public static SingletonRepList instance = null;
    
    private static HashMap reps = new HashMap();
-   private static WSClientMionline wsMionline = null;
+   private static WSClientMionlineNew wsMionline = null;
    
-   private static Logger logger = LogManager.getLogger();
+   private static Logger logger = null;
    
    protected SingletonRepList() {
       // Exists to defeat instantiation 
@@ -73,7 +73,7 @@ public class SingletonRepList
 			//call MIOnline
    		if(wsMionline == null )
    		{
-   			wsMionline = WSClientFactory.getMionlineClient();
+   			wsMionline=null;
    		}
 			dtoRepinfo =  wsMionline.getRepInfo(uwCode);
 			

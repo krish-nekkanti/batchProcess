@@ -8,18 +8,16 @@ package com.radian.cuwbilling.billing.common.os.persistence;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.ArrayList;
 
 import com.radian.cuwbilling.billing.common.bo.codes.BillingStatus;
 import com.radian.cuwbilling.billing.cuw.bo.domain.TimeSheetEntry;
 import com.radian.cuwbilling.billing.cuw.bo.domain.impl.TimeSheetEntryImpl;
-import com.radian.cuwbilling.common.bo.dto.DateDTO;
 import com.radian.foundation.bs.SearchCriteria;
-import com.radian.foundation.os.persistence.mapper.BaseRDBMSMapper;
 import com.radian.foundation.os.persistence.spi.PersistenceProvider;
 import com.radian.foundation.os.persistence.spi.PersistenceProviderException;
 import com.radian.foundation.os.persistence.spi.Query;
@@ -28,7 +26,7 @@ import com.radian.foundation.os.persistence.spi.Query;
  *
  * @author Drea Leed temporary stub mapper for buisness services development
  */
-public class TimesheetMapper extends BaseRDBMSMapper
+public class TimesheetMapper
 {
     private final static String FIND_BY_UNDERWRITER_CODE = 
     	"com.radian.cuwbilling.billing.common.os.persistence.TimesheetMapper.getByUnderwriterCode";
@@ -61,7 +59,7 @@ public class TimesheetMapper extends BaseRDBMSMapper
     /** Creates a new instance of BillingMapper */
     public TimesheetMapper(PersistenceProvider provider)
     {
-        super(provider);
+        
     }
 
     /*

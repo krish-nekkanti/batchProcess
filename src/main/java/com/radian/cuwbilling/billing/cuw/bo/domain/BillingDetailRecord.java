@@ -9,7 +9,6 @@ import java.util.Date;
 
 import com.radian.cuwbilling.billing.common.bo.codes.BDRBillingStatus;
 import com.radian.cuwbilling.billing.common.bo.codes.BDRType;
-import com.radian.cuwbilling.billing.common.bo.domain.BillingProfile;
 import com.radian.cuwbilling.common.bo.codes.UnitOfMeasure;
 import com.radian.cuwbilling.common.bo.domain.BaseDomainObject;
 import com.radian.cuwbilling.common.bo.domain.Money;

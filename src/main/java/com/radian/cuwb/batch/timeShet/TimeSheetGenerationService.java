@@ -33,8 +33,6 @@ import javax.transaction.UserTransaction;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
-import org.codehaus.plexus.personality.plexus.lifecycle.phase.ServiceLocator;
-import org.springframework.context.annotation.Configuration;
 
 import com.radian.cuwbilling.billing.common.bs.BillingException;
 import com.radian.cuwbilling.billing.common.os.persistence.TimeSheetImportMapper;
@@ -51,10 +49,9 @@ import com.radian.cuwbilling.common.bo.codes.AxiomEntityType;
 import com.radian.cuwbilling.common.bo.domain.impl.NullEntityImpl;
 import com.radian.cuwbilling.common.bo.dto.DateDTO;
 import com.radian.cuwbilling.system.batch.bo.dto.ImportExportMsgDTO;
-import com.radian.cuwbilling.system.batch.bs.ImportExportMsgAdministration;
+import com.radian.cuwbilling.system.batch.bs.ImportExportMsgAdminService;
 import com.radian.cuwbilling.system.batch.bs.ImportExportMsgException;
 import com.radian.cuwbilling.system.common.bo.code.ImportExportMsgType;
-import com.radian.cuwbilling.system.common.bs.SystemServiceFactory;
 import com.radian.cuwbilling.system.notification.bo.code.AxiomEventCategory;
 import com.radian.cuwbilling.system.notification.bs.eventrouter.EventRouterDelegate;
 import com.radian.foundation.os.persistence.spi.PersistenceProvider;
@@ -78,10 +75,11 @@ public class TimeSheetGenerationService{
 	 */
 	TimesheetMapper timesheetMapper = new TimesheetMapper(provider); 
 	TimeSheetImportMapper timeSheetImportMapper = new TimeSheetImportMapper(provider);
+	ImportExportMsgAdminService impoExportMsgAdminService;
 
 
 	public TimeSheetGenerationService() {
-		provider = getProvider();
+		provider =null;
 	}
 	public FTPClient getFTPClient(String ftpType,Properties prop,boolean status) throws Exception{
 		String host=null;
@@ -125,13 +123,13 @@ public class TimeSheetGenerationService{
 		TimeSheetStatisticsDTO timesheetStats = new TimeSheetStatisticsDTO();
 		Properties prop = new Properties(); //Repositioned code - 09APR2013
 		try {
-			Configuration ftpConfig =ServiceLocator.getInstance().getConfiguration("ftp-config");
-			//Properties prop = new Properties();
-			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream(ftpConfig.getString("configFile"));
-			prop.load(is);
-			is.close();
-
-			boolean status;
+//			Configuration ftpConfig =ServiceLocator.getInstance().getConfiguration("ftp-config");
+//			//Properties prop = new Properties();
+//			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream(ftpConfig.getString("configFile"));
+//			prop.load(is);
+//			is.close();
+//TODO Read roperties from ftp-config  file - KP
+			boolean status=false;
 			fromClient = getFTPClient("FROM", prop,status);
 			toClient = getFTPClient("TO", prop,status);
 			backupClient = getFTPClient("BACKUP", prop,status);
@@ -704,8 +702,7 @@ public class TimeSheetGenerationService{
 			message.setMessageText(description);
 			message.setSuccessFlag(successFlag);
 			message.setImportExportMsgType(messageType);
-			ImportExportMsgAdministration service = SystemServiceFactory.instance().getImportExportMsgAdminService();
-			service.create(message);
+			impoExportMsgAdminService.create(message);
 		}catch (ImportExportMsgException e)	{
 			// don't throw an error, as this is a batch process that should
 			// continue

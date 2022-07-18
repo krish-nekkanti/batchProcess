@@ -23,7 +23,7 @@ import com.radian.foundation.os.persistence.spi.Query;
  *
  * @author Drea Leed temporary stub mapper for buisness services development
  */
-public class TimeSheetImportMapper extends BaseRDBMSMapper
+public class TimeSheetImportMapper 
 {
     private final static String FIND_BY_UNDERWRITER_CODE = "com.radian.cuwbilling.billing.common.os.persistence.TimeSheetImportMapper.getByUnderwriterCode";
 

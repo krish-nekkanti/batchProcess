@@ -8,15 +8,17 @@ import java.text.MessageFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.radian.cuwbilling.common.bo.codes.AxiomEntityType;
 import com.radian.cuwbilling.common.bo.domain.AxiomEntity;
+import com.radian.cuwbilling.system.batch.bs.ImportExportMsgAdminService;
 import com.radian.cuwbilling.system.notification.bo.code.AxiomEventCategory;
 import com.radian.cuwbilling.system.notification.bo.domain.AxiomEventType;
 import com.radian.cuwbilling.system.notification.bo.domain.Event;
 import com.radian.cuwbilling.system.notification.bs.JMSHelper;
 import com.radian.cuwbilling.system.notification.os.persistence.AxiomEventTypeMapper;
-import com.radian.foundation.common.logging.LogManager;
-import com.radian.foundation.common.logging.Logger;
 import com.radian.foundation.os.persistence.spi.PersistenceProvider;
 import com.radian.foundation.os.persistence.spi.PersistenceProviderException;
 
@@ -30,11 +32,10 @@ public class EventRouterDelegate
 
     private static EventRouterDelegate instance = new EventRouterDelegate();
 
-    private transient Logger logger;
+	Logger logger = LoggerFactory.getLogger(ImportExportMsgAdminService.class);
 
     private EventRouterDelegate()
     {
-        logger = LogManager.getLogger(getClass());
     }
 
     public static EventRouterDelegate getInstance()

@@ -6,7 +6,6 @@ import com.radian.cuwbilling.common.bo.codes.AxiomEntityType;
 import com.radian.cuwbilling.system.notification.bo.code.AxiomEventCategory;
 import com.radian.cuwbilling.system.notification.bo.domain.AxiomEventType;
 import com.radian.cuwbilling.system.notification.bo.domain.impl.AxiomEventTypeImpl;
-import com.radian.foundation.os.persistence.mapper.BaseRDBMSMapper;
 import com.radian.foundation.os.persistence.mapper.BaseRDBMSMapperInitializationException;
 import com.radian.foundation.os.persistence.spi.PersistenceProvider;
 import com.radian.foundation.os.persistence.spi.PersistenceProviderException;
@@ -17,7 +16,7 @@ import com.radian.foundation.os.persistence.spi.Query;
  * 
  * @author Valentinas Jurkevicius
  */
-public class AxiomEventTypeMapper extends BaseRDBMSMapper
+public class AxiomEventTypeMapper 
 {
 
     /**

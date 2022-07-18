@@ -1,6 +1,8 @@
 
 package com.radian.foundation.common.logging;
 
+import org.slf4j.event.Level;
+
 /**
  * Logger interface.
  *
