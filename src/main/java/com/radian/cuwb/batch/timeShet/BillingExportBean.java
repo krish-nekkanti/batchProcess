@@ -26,14 +26,12 @@ import com.radian.cuwbilling.common.bo.codes.AxiomEntityType;
 import com.radian.cuwbilling.common.bo.domain.impl.NullEntityImpl;
 import com.radian.cuwbilling.common.bo.dto.DateDTO;
 import com.radian.cuwbilling.system.batch.bo.dto.ImportExportMsgDTO;
-import com.radian.cuwbilling.system.batch.bs.ImportExportMsgAdministration;
+import com.radian.cuwbilling.system.batch.bs.ImportExportMsgAdminService;
 import com.radian.cuwbilling.system.batch.bs.ImportExportMsgException;
 import com.radian.cuwbilling.system.common.bo.code.ImportExportMsgType;
-import com.radian.cuwbilling.system.common.bs.SystemServiceFactory;
 import com.radian.cuwbilling.system.messaging.bo.dto.ResponseInfo;
 import com.radian.cuwbilling.system.notification.bo.code.AxiomEventCategory;
 import com.radian.cuwbilling.system.notification.bs.eventrouter.EventRouterDelegate;
-import com.radian.foundation.bs.BaseSessionBean;
 import com.radian.foundation.common.exception.ApplicationException;
 import com.radian.foundation.os.messaging.util.UUIDUtil;
 import com.radian.foundation.os.persistence.spi.PersistenceProvider;
@@ -62,7 +60,7 @@ import com.radian.webserviceclient.WSClientFactory;
  * @version 1.0
  */
 
-public class BillingExportBean extends BaseSessionBean implements BillingExportAdministration
+public class BillingExportBean 
 {
 
     private static final String EXPORT_SUCCESS = "0";
