@@ -14,7 +14,6 @@ import com.radian.cuwbilling.billing.common.bo.codes.BillingStatus;
 import com.radian.cuwbilling.billing.cuw.bo.domain.TimeSheetImportEntry;
 import com.radian.cuwbilling.billing.cuw.bo.domain.impl.TimeSheetImportEntryImpl;
 import com.radian.foundation.bs.SearchCriteria;
-import com.radian.foundation.os.persistence.mapper.BaseRDBMSMapper;
 import com.radian.foundation.os.persistence.spi.PersistenceProvider;
 import com.radian.foundation.os.persistence.spi.PersistenceProviderException;
 import com.radian.foundation.os.persistence.spi.Query;

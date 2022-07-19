@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import javax.transaction.HeuristicMixedException;
 import javax.transaction.HeuristicRollbackException;
 import javax.transaction.NotSupportedException;
@@ -22,10 +23,12 @@ import javax.transaction.RollbackException;
 import javax.transaction.Status;
 import javax.transaction.SystemException;
 import javax.transaction.UserTransaction;
+
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import com.radian.cuwbilling.billing.common.bs.BillingException;
 import com.radian.cuwbilling.billing.common.os.persistence.TimeSheetImportMapper;
 import com.radian.cuwbilling.billing.common.os.persistence.TimesheetMapper;
@@ -55,11 +58,12 @@ import com.radian.foundation.os.persistence.spi.PersistenceProviderException;
  * @author KMadireddy
  */
 public class TimeSheetGenerationService{
+	
 	PersistenceProvider provider = null;
 	/**
 	 * Reach to remote ftp server; 
-	 *   Validate time sheet file; 
-	 *   Transfer the file to DB server if the file is in valid format.
+	 * Validate time sheet file; 
+	 * Transfer the file to DB server if the file is in valid format.
 	 * @return: true: if file is transferred to DB server; false: otherwise
 	 * @throws IOException 
 	 * @throws SocketException 
@@ -340,11 +344,11 @@ public class TimeSheetGenerationService{
 	 * Creates a timesheet.
 	 *
 	 * @param timeSheet
-	 *            a timesheet DTO.
+	 *a timesheet DTO.
 	 * @param errorMessages
-	 *            a collection of error messages.
+	 *a collection of error messages.
 	 * @param provider
-	 *            persistence provider.
+	 *persistence provider.
 	 *
 	 * @return an ID of the created timesheet.
 	 * @throws BillingException
@@ -439,11 +443,11 @@ public class TimeSheetGenerationService{
 			}
 		} catch (PersistenceProviderException e){
 			logger.error(e.getMessage(), e);
-			//getSessionContext().setRollbackOnly();
+			
 			throw new BillingException("PersistenceProviderException in TimeSheetGenerationBean.getTimeSheetSummary(TimeSheetSearchCriteria criteria)", e);
 		} catch (RuntimeException e){
 			logger.error(e.getMessage(), e);
-			//getSessionContext().setRollbackOnly();
+			
 			throw new BillingException("RuntimeException in TimeSheetGenerationBean.getTimeSheetSummary(TimeSheetSearchCriteria criteria)", e);
 		} finally{
 			
@@ -467,11 +471,11 @@ public class TimeSheetGenerationService{
 			timeSheet = mapDOToDTO(timeEntry);
 		}catch (PersistenceProviderException e)	{
 			logger.error(e.getMessage(), e);
-			//getSessionContext().setRollbackOnly();
+			
 			throw new BillingException("PersistenceProviderException in TimeSheetGenerationBean.getByID(Long timeSheetID) ", e);
 		} catch (RuntimeException e){
 			logger.error(e.getMessage(), e);
-			//getSessionContext().setRollbackOnly();
+			
 			throw new BillingException("RuntimeException in TimeSheetGenerationBean.getByID(Long timeSheetID) ", e);
 		} finally{
 			
@@ -483,7 +487,7 @@ public class TimeSheetGenerationService{
 	 * Delete a Time Sheet.
 	 *
 	 * @param timeSheetID
-	 *            the ID of the TimeSheet to delete.
+	 *the ID of the TimeSheet to delete.
 	 * @throws BillingException
 	 */
 	public void delete(Long timeSheetID) throws BillingException{
@@ -521,11 +525,11 @@ public class TimeSheetGenerationService{
 			}
 		} catch (PersistenceProviderException e){
 			System.err.println(e.getMessage()+e);
-			//getSessionContext().setRollbackOnly();
+			
 			throw new BillingException("PersistenceProviderException in TimeSheetGenerationBean.getTimeSheetSummary(TimeSheetSearchCriteria criteria)", e);
 		} catch (RuntimeException e){
 			System.err.println(e.getMessage()+e);
-			//getSessionContext().setRollbackOnly();
+			
 			throw new BillingException("RuntimeException in TimeSheetGenerationBean.getTimeSheetSummary(TimeSheetSearchCriteria criteria)", e);
 		} finally{
 			
@@ -573,7 +577,7 @@ public class TimeSheetGenerationService{
 		//        timeSheet.setBilled(Boolean.FALSE);
 		//        if (timeSheetEntry.getBillingStatus() != null && timeSheetEntry.getBillingStatus() == BillingStatus.BILLED)
 		//        {
-		//            timeSheet.setBilled(Boolean.TRUE);
+		//timeSheet.setBilled(Boolean.TRUE);
 		//        }
 		String underwriterCode = timeSheetEntry.getUnderwriterCode();
 		if (underwriterCode != null){
@@ -585,11 +589,11 @@ public class TimeSheetGenerationService{
 	 * Maps TimeSheetMsgDTO to TimeSheetImportEntry DO.
 	 *
 	 * @param timeSheet
-	 *            a (@link com.radian.cuwbilling.billing.cuw.bo.dto.TimeSheetMsgDTO)
-	 *            object for create method.
+	 *a (@link com.radian.cuwbilling.billing.cuw.bo.dto.TimeSheetMsgDTO)
+	 *object for create method.
 	 * @param provider
-	 *            a PersistenceProvider reference for retreiving Placement
-	 *            value.
+	 *a PersistenceProvider reference for retreiving Placement
+	 *value.
 	 * @return TimeSheetImportEntry domain object.
 	 * @throws BillingException
 	 */
@@ -605,8 +609,8 @@ public class TimeSheetGenerationService{
 	 * map TimeSheetDTO to TimeSheetImportEntry DO.
 	 *
 	 * @param timeSheet
-	 *            a (@link com.radian.cuwbilling.billing.cuw.bo.dto.TimeSheetDTO)
-	 *            object reference for update method
+	 *a (@link com.radian.cuwbilling.billing.cuw.bo.dto.TimeSheetDTO)
+	 *object reference for update method
 	 * @return TimeSheetImportEntry domain object.
 	 */
 	private void mapDTOtoDO(TimeSheetDTO timeSheet, TimeSheetImportEntry timesheetDO){
@@ -621,14 +625,14 @@ public class TimeSheetGenerationService{
 	 * Creates an import/export log record
 	 *
 	 * @param trackingNumber
-	 *            Allows correlation between a request and response.
+	 *Allows correlation between a request and response.
 	 * @param successFlag
-	 *            Identifies whether the requested action was a success or
-	 *            failure.
+	 *Identifies whether the requested action was a success or
+	 *failure.
 	 * @param description
-	 *            Description of the action/error that occurred.
+	 *Description of the action/error that occurred.
 	 * @param messageType
-	 *            Enum defining type of message being logged.
+	 *Enum defining type of message being logged.
 	 */
 	private void logTimeSheetNotification(String batchNumber, Boolean successFlag, String description, ImportExportMsgType messageType){
 		// //getLogger().entering(this.getClass(), "logTimeSheetNotification");
@@ -646,8 +650,9 @@ public class TimeSheetGenerationService{
 			// continue
 			// regardless
 			logger.error("ImportExportMsgException in logTimeSheetNotification:" + e.getMessage(), e);
+		}catch (Exception e)	{
+			logger.error("ImportExportMsgException in logTimeSheetNotification:" + e.getMessage(), e);
 		}
-		// //getLogger().exiting(this.getClass(), "logImportExportNotification");
 	}
 	private void sendNotification(boolean success, String message){
 		PersistenceProvider provider = null;
@@ -707,7 +712,6 @@ public class TimeSheetGenerationService{
 	/**
 	 * Helper to begin bean managed transaction that involves persistence
 	 * provider.
-	 *
 	 * @param userTran
 	 * @return persistence provider associated with the started transaction.
 	 * @throws NotSupportedException
@@ -721,11 +725,10 @@ public class TimeSheetGenerationService{
 	}
 	/**
 	 * Helper to commit a bean managed transaction.
-	 *
 	 * @param userTran
 	 * @param provider
-	 *            usually this should be the provider returned by the previous
-	 *            call to <code>beginManualTransaction</code>.
+	 * usually this should be the provider returned by the previous
+	 * call to <code>beginManualTransaction</code>.
 	 * @throws SecurityException
 	 * @throws IllegalStateException
 	 * @throws RollbackException
@@ -741,12 +744,11 @@ public class TimeSheetGenerationService{
 	}
 	/**
 	 * Helper to rollback a bean managed transaction.
-	 *
 	 * @param userTran
-	 *            the transaction to rollback.
+	 *the transaction to rollback.
 	 * @param provider
-	 *            usually this should be the provider returned by the previous
-	 *            call to <code>beginManualTransaction</code>.
+	 *usually this should be the provider returned by the previous
+	 *call to <code>beginManualTransaction</code>.
 	 */
 	private void rollbackManualTransaction(UserTransaction userTran, PersistenceProvider provider){
 		
@@ -755,9 +757,8 @@ public class TimeSheetGenerationService{
 	/**
 	 * Helper to rollback a bean managed transaction. This is overload for when
 	 * there is no persistence provider involved in the transaction.
-	 *
 	 * @param userTran
-	 *            the transaction to rollback.
+	 *the transaction to rollback.
 	 */
 	private void rollbackManualTransaction(UserTransaction userTran){
 		try	{
@@ -772,7 +773,6 @@ public class TimeSheetGenerationService{
 	 * Loop through the given stream line by line. Validate each line against given format.
 	 * 	Construct error message string according to error message collection.
 	 * 	Return error message string.
-	 * 
 	 * @param in: representing timesheet file
 	 * @return: error message string
 	 */
@@ -855,7 +855,7 @@ public class TimeSheetGenerationService{
 				//number format wrong
 			}
 			try {
-				hrs = Double.valueOf(fields[1]).doubleValue();               
+				hrs = Double.valueOf(fields[1]).doubleValue();   
 			} catch (NumberFormatException nfe) {
 				System.out.println("NumberFormatException: " + nfe.getMessage());
 			}
@@ -878,7 +878,7 @@ public class TimeSheetGenerationService{
 		if( error != null && error.length()>1){
 			errors.add(error);  
 			try {
-				hrs = Double.valueOf(fields[1]).doubleValue();               
+				hrs = Double.valueOf(fields[1]).doubleValue();   
 			} catch (NumberFormatException nfe) {
 				System.out.println("NumberFormatException: " + nfe.getMessage());
 			}

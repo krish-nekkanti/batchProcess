@@ -34,7 +34,7 @@ public class ImportExportMsgAdminService{
 	 */
 	Logger logger = LoggerFactory.getLogger(ImportExportMsgAdminService.class);
 	PersistenceProvider provider = null;
-	ImportExportMsgMapper mapper = new ImportExportMsgMapper(provider);
+	ImportExportMsgMapper importExportMsgMapper = new ImportExportMsgMapper(provider);
 	
 	public Long create(ImportExportMsgDTO importExportMsgDTO) throws ImportExportMsgException{
 		logger.debug( "create(ImportExportMsgDTO importExportMsgDTO)");
@@ -43,7 +43,7 @@ public class ImportExportMsgAdminService{
 		try{
 			ImportExportMsgAssembler assembler = new ImportExportMsgAssembler();
 			importExportMsgDO = (ImportExportMessage) assembler.createDO(importExportMsgDTO, provider);
-			mapper.create(importExportMsgDO);
+			importExportMsgMapper.create(importExportMsgDO);
 			importExportMsgID = importExportMsgDO.getID();
 		} catch (ValidationException e){
 			logger.error(e.getMessage(), e);
@@ -69,7 +69,7 @@ public class ImportExportMsgAdminService{
 		
 		ImportExportMsgDTO importExportMsgDTO = null;
 		try{
-			ImportExportMessage importExportMsgDO = mapper.read(importExportMsgID);
+			ImportExportMessage importExportMsgDO = importExportMsgMapper.read(importExportMsgID);
 			ImportExportMsgAssembler assembler = new ImportExportMsgAssembler();
 			importExportMsgDTO = (ImportExportMsgDTO) assembler.createDTO(importExportMsgDO, provider);
 		} catch (ValidationException e){
@@ -96,7 +96,7 @@ public class ImportExportMsgAdminService{
 		List<ImportExportMessage> importExportMsgDOs = null;
 		List<ImportExportMsgDTO> importExportMsgDTOs = new ArrayList<ImportExportMsgDTO>();
 		try{
-			importExportMsgDOs = (List<ImportExportMessage>) mapper.getByCriteria(importExportMsgSearchCriteria);
+			importExportMsgDOs = (List<ImportExportMessage>) importExportMsgMapper.getByCriteria(importExportMsgSearchCriteria);
 			if ((importExportMsgDOs != null) && (importExportMsgDOs.size() > 0)){
 				Iterator<ImportExportMessage> iter = importExportMsgDOs.iterator();
 				ImportExportMsgAssembler assembler = new ImportExportMsgAssembler();
