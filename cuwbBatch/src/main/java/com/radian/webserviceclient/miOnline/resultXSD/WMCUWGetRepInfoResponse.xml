@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMCUWGetRepInfoResponse_DTL version="1.0" method="">
+   <call_returnstatus>
+      <errorcode />
+      <errordesc />
+      <errorsrc />
+   </call_returnstatus>
+   <repid>FEE</repid>
+   <cuw_info>
+      <repid>FEE</repid>
+      <firstname>SCCUWUserRep</firstname>
+      <lastname>ccteam</lastname>
+      <jobfunction>Underwriter</jobfunction>
+      <location>17160000</location>
+   </cuw_info>
+</WMCUWGetRepInfoResponse_DTL>
