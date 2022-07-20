@@ -1,75 +1,67 @@
 package com.radian.webserviceclient;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.StringReader;
 import java.rmi.RemoteException;
 import java.util.Collection;
+
 import javax.xml.parsers.FactoryConfigurationError;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-import MDMServices.Radian.GetBillingProfile;
-import MDMServices.Radian.GetBillingProfileCoveredBranches;
-import MDMServices.Radian.GetBillingProfileCoveredBranchesResponse;
-import MDMServices.Radian.GetBillingProfileOnsites;
-import MDMServices.Radian.GetBillingProfileOnsitesResponse;
-import MDMServices.Radian.GetBillingProfileResponse;
-import MDMServices.Radian.GetBillingProfileThirdParties;
-import MDMServices.Radian.GetBillingProfileThirdPartiesResponse;
-import MDMServices.Radian.GetBillingProfiles;
-import MDMServices.Radian.GetBillingProfilesLite;
-import MDMServices.Radian.GetBillingProfilesLiteResponse;
-import MDMServices.Radian.GetBillingProfilesResponse;
-import MDMServices.Radian.GetCodes;
-import MDMServices.Radian.GetCodesResponse;
-import MDMServices.Radian.GetCostCenter;
-import MDMServices.Radian.GetCostCenterResponse;
-import MDMServices.Radian.GetCustomer;
-import MDMServices.Radian.GetCustomerLocation;
-import MDMServices.Radian.GetCustomerLocationResponse;
-import MDMServices.Radian.GetCustomerResponse;
-import MDMServices.Radian.GetOnsitePricing;
-import MDMServices.Radian.GetOnsitePricingResponse;
-import MDMServices.Radian.GetServiceCenterPricing;
-import MDMServices.Radian.GetServiceCenterPricingResponse;
-import MDMServices.Radian.GetServiceTypes;
-import MDMServices.Radian.GetServiceTypesResponse;
-import MDMServices.Radian.GetThirdPartySubmitterBilledInvestors;
-import MDMServices.Radian.GetThirdPartySubmitterBilledInvestorsResponse;
+
 import com.radian.cuwbilling.billing.cuw.bo.dto.pricing.request.BillingProfileRequestDTO;
 import com.radian.cuwbilling.billing.cuw.bo.dto.pricing.response.BillingProfileDTO;
 import com.radian.cuwbilling.billing.cuw.bo.dto.pricing.response.CustLocationDTO;
+import com.radian.cuwbilling.billing.cuw.bo.dto.pricing.response.CustomerDTO;
 import com.radian.cuwbilling.billing.cuw.bo.dto.pricing.response.CustomerPricingStructuresDTO;
 import com.radian.cuwbilling.billing.cuw.bo.dto.pricing.response.UnderwriterPricingStructuresDTO;
-import com.radian.cuwbilling.billing.cuw.bo.dto.pricing.response.CustomerDTO;
-import com.radian.foundation.common.logging.LogManager;
-import com.radian.foundation.common.logging.Logger;
-import com.radian.ws.client.CMDServiceSoap;
+import com.radian.webserviceclient.cmd.endPoints.CMDWSConnector;
+import com.radian.webserviceclient.cmd.model.GetBillingProfile;
+import com.radian.webserviceclient.cmd.model.GetBillingProfileCoveredBranches;
+import com.radian.webserviceclient.cmd.model.GetBillingProfileCoveredBranchesResponse;
+import com.radian.webserviceclient.cmd.model.GetBillingProfileOnsites;
+import com.radian.webserviceclient.cmd.model.GetBillingProfileOnsitesResponse;
+import com.radian.webserviceclient.cmd.model.GetBillingProfileResponse;
+import com.radian.webserviceclient.cmd.model.GetBillingProfileThirdParties;
+import com.radian.webserviceclient.cmd.model.GetBillingProfileThirdPartiesResponse;
+import com.radian.webserviceclient.cmd.model.GetBillingProfiles;
+import com.radian.webserviceclient.cmd.model.GetBillingProfilesLite;
+import com.radian.webserviceclient.cmd.model.GetBillingProfilesLiteResponse;
+import com.radian.webserviceclient.cmd.model.GetBillingProfilesResponse;
+import com.radian.webserviceclient.cmd.model.GetCodes;
+import com.radian.webserviceclient.cmd.model.GetCodesResponse;
+import com.radian.webserviceclient.cmd.model.GetCostCenter;
+import com.radian.webserviceclient.cmd.model.GetCostCenterResponse;
+import com.radian.webserviceclient.cmd.model.GetCustomer;
+import com.radian.webserviceclient.cmd.model.GetCustomerLocation;
+import com.radian.webserviceclient.cmd.model.GetCustomerLocationResponse;
+import com.radian.webserviceclient.cmd.model.GetCustomerResponse;
+import com.radian.webserviceclient.cmd.model.GetOnsitePricing;
+import com.radian.webserviceclient.cmd.model.GetOnsitePricingResponse;
+import com.radian.webserviceclient.cmd.model.GetServiceCenterPricing;
+import com.radian.webserviceclient.cmd.model.GetServiceCenterPricingResponse;
+import com.radian.webserviceclient.cmd.model.GetServiceTypes;
+import com.radian.webserviceclient.cmd.model.GetServiceTypesResponse;
+import com.radian.webserviceclient.cmd.model.GetThirdPartySubmitterBilledInvestors;
+import com.radian.webserviceclient.cmd.model.GetThirdPartySubmitterBilledInvestorsResponse;
+import com.radian.webserviceclient.miOnline.endPoints.WMCUWGetRepInfoResponse;
 
 public class WSClientCMDNew {
 	
-	private CMDServiceSoap webservice;
-	private static Logger logger = LogManager.getLogger(WSClientCMDNew.class);
+    private static final String WEBSERVICE_URL = null;
+	Logger logger = LoggerFactory.getLogger(WSClientMionlineNew.class);
 	private static String WS_INVALID_REQUEST = "WSClientCMD: requestDTO missing required params";
 	private static String WS_NORESPONSE = "WSClientCMD: null or unusable response from CMD";
 	private static String EMPTY_STRING = "";
 	private static String WS_CLEANXML_AMPSYM = "\\&";
 	private static String WS_CLEANXML_AMPSYM_REPL = " ";
-	/**
-	 * @param webservice
-	 */
-	protected void setWebservice(CMDServiceSoap webservice){
-		this.webservice = webservice;
-	}
-	/**
-	 * @return the webservice
-	 */
-	private CMDServiceSoap getWebservice(){
-		return webservice;
-	}
+    private CMDWSConnector wsConnector;
+
 	/**
 	 * Calls pricing web service
 	 * @param dtoRequest contains time and loan data for pricing one onsite underwriter (rep)
@@ -83,8 +75,7 @@ public class WSClientCMDNew {
 		cust.setCustomerNumber(custNum);
 		GetCustomerResponse resp = null;
 		try{	
-			resp = getWebservice().getCustomer(cust);
-			//System.out.print(resp.getGetCustomerResult());
+			 resp  = (GetCustomerResponse) wsConnector.callWebService(WEBSERVICE_URL, cust);
 		}
 		catch (RemoteException e){	
 			throw new WSClientException(e);
